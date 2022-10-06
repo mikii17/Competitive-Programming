@@ -1,10 +1,11 @@
+from collections import deque
 class Solution(object):
     def isValid(self, s):
         """
         :type s: str
         :rtype: bool
         """
-        stack = []
+        stack = deque()
         opening = "({["
         closing = ")}]"
         for ch in s:
