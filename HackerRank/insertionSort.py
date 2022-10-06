@@ -21,15 +21,14 @@ def printer(n, arr):
 
 def insertionSort1(n, arr):
     # Write your code here
-    for i in range(1, n):
-        key = arr[i]
-        j = i - 1
-        while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
-            j -= 1
-            printer(n, arr)
-            print()
-        arr[j + 1] = key
+    key = arr[n - 1]
+    n = n - 2
+    while n >= 0 and key < arr[n]:
+        arr[n + 1] = arr[n]
+        n -= 1
+        printer(n, arr)
+        print()
+    arr[n + 1] = key
     printer(n, arr)
          
 
