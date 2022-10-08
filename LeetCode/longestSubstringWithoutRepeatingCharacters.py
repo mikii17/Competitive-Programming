@@ -2,17 +2,14 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         map_ = {}
         leftIndex = 0
-        output = ""
+        output = 0
         
         for rightIndex in range(len(s)):
-            while map_.get(s[rightIndex]):
-                map_[s[leftIndex]] = None
-                leftIndex += 1           
+            if s[rightIndex] in map_ and leftIndex <= map_.get(s[rightIndex]):
+                leftIndex = map_.get(s[rightIndex]) + 1
                 
-            map_[s[rightIndex]] = 1
-            if len(output) < rightIndex - leftIndex + 1:
-                output = s[leftIndex: rightIndex + 1]
+            map_[s[rightIndex]] = rightIndex
+            output = max(output, rightIndex - leftIndex + 1)
                 
-        return len(output)
-            
+        return output
             
