@@ -26,3 +26,5 @@ class Solution:
                 minKey = key
         
         return minKey
+
+    
