@@ -12,10 +12,6 @@ class Solution:
         ptr2 = head.next.next
         isHeadDup = head.val == head.next.val
         isDup = False
-        
-        if isHeadDup:
-            if not head.next.next:
-                return None
     
         while ptr2:
             if ptr1.next.val != ptr2.val:
